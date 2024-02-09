@@ -1,7 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
-const router = require("./routes/user-routes.js");
+const userRouter = require("./routes/user-routes.js");
+const bookRouter = require("./routes/book-routes.js");
 const cors = require("cors");
 
 const app = express();
@@ -9,12 +10,13 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use("/api/user", router);
+app.use("/api/user", userRouter);
+app.use("/api/book", bookRouter);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8000;
 
 mongoose
-  .connect(process.env.DATABASE_URL)
+  .connect(process.env.MONGO_URL)
   .then(() => app.listen(PORT))
   .then(() =>
     console.log(`Connected to the database and listening at PORT ${PORT}`)
