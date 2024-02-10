@@ -18,7 +18,7 @@ const RoutesPaths = () => {
       <Route path="/login" exact component={LoginUser} />
       <Route path={paths.createUser} component={CreateUser} />
       <Route path="/books" exact component={BookList} />
-      <Route path="/dashBook" exact component={Book} />
+      <Route path="/book" exact component={Book} />
       <Route path={`${paths.editBook}:id`} component={EditBook} />
       <Route path={paths.createBook} component={AddBook} />
     </>

@@ -40,7 +40,7 @@ function AddBook() {
 
       console.log(res.data);
       alert("Data Saved Successfully!");
-      window.location.assign("http://localhost:3000/dashBook");
+      window.location.assign("http://localhost:3000/books");
     } catch (error) {
       console.log(error);
     }

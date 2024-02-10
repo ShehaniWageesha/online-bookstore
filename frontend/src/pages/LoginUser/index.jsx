@@ -34,7 +34,7 @@ function LoginUser() {
 
       const token = res.data.token;
       localStorage.setItem("token", token);
-      window.location.assign("http://localhost:3000/dashBook");
+      window.location.assign("http://localhost:3000/books");
     } catch (error) {
       console.log(error);
     }

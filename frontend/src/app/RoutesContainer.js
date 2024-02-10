@@ -18,7 +18,7 @@ function RoutesContainer() {
         <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/login" element={<LoginUser />} />
         <Route path="/createUser" element={<CreateUser />} />
-        <Route path="/dashBook" element={<BookList />} />
+        <Route path="/books" element={<BookList />} />
         <Route path="/editBook/:id" element={<EditBook />} />
         <Route path="/addBook" element={<AddBook />} />
         <Route path="/book" element={<Book />} />

@@ -72,7 +72,7 @@ function BooksList() {
       <h2 style={{ fontFamily: "bolder", fontStyle: "italic", color: "white" }}>Book Info</h2>
       <br></br>
       <table className="table">
-        <thead className="thead-light">
+        <thead  style={{ backgroundColor: "lightgray" }}>
           <tr>
             <th>Title</th>
             <th>Author</th>

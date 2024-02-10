@@ -13,11 +13,11 @@ const NavBar = () => {
         <ul className="navbar-nav mr-auto">
           <li className="navbar-item" style={{ marginLeft: "15px", width: "100px" }}>
             <Link to="/addBook" className="nav-link">
-              Add Books
+              Add Book
             </Link>
           </li>
           <li className="navbar-item" style={{ marginLeft: "10px" }}>
-            <Link to="/dashBook" className="nav-link">
+            <Link to="/books" className="nav-link">
               Books
             </Link>
           </li>

@@ -48,7 +48,7 @@ function EditBook() {
           },
         }
       );
-      navigate("/dashBook");
+      navigate("/books");
       alert("Updated Successfully!");
     } catch (error) {
       console.log(error);
@@ -61,7 +61,7 @@ function EditBook() {
 
   return (
     <div style={{ color: "white", marginLeft: "330px" }}>
-      <h2 style={{ fontFamily: "bolder", fontStyle: "italic" }}>Edit Book</h2>
+      <h1 style={{ fontFamily: "bolder", fontStyle: "italic" }}>Update Book</h1>
       <br />
       <form
         noValidate
@@ -140,6 +140,7 @@ function EditBook() {
             style={{ background: "transparent" }}
           />
         </div>
+        <br></br>
         <div className="form-group">
           <input type="submit" value="Update" className="btn btn-dark" />
         </div>
