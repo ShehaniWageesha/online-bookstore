@@ -7,18 +7,11 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="navbar navbar-dark bg-dark navbar-expand-md">
-      <Link
-        to="/dashLanding"
-        className="navbar-brand"
-        style={{ marginLeft: "15px" }}
-      >
-        Online BookStore
-      </Link>
-
+    <><nav className="navbar navbar-dark navbar-expand-lg">
+      <h5 style={{ color: "white", marginTop: "1.5px" }}>eBookStore</h5>
       <div className="collpase navbar-collapse">
         <ul className="navbar-nav mr-auto">
-          <li className="navbar-item" style={{ marginLeft: "10px", width: "100px" }}>
+          <li className="navbar-item" style={{ marginLeft: "15px", width: "100px" }}>
             <Link to="/addBook" className="nav-link">
               Add Books
             </Link>
@@ -29,9 +22,9 @@ const NavBar = () => {
             </Link>
           </li>
 
-          <li style={{ float: "right", marginLeft: "850px" }}>
+          <li style={{ float: "right", marginLeft: "665px" }}>
             <Link
-              to="/dashLanding"
+              to="/login"
               style={{
                 borderRadius: "3px",
                 letterSpacing: "1.5px",
@@ -45,7 +38,11 @@ const NavBar = () => {
           </li>
         </ul>
       </div>
-    </nav>
+
+    </nav><>
+        <br></br>
+      </></>
+    
   );
 };
 

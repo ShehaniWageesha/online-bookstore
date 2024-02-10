@@ -8,8 +8,6 @@ import EditBook from "../pages/EditBook";
 import BookList from "../pages/BookList";
 import Book from "../pages/Book";
 import { RoutePaths } from "./route-paths";
-import Landing from "../pages/Landing";
-
 
 const RoutesPaths = () => {
   const paths = RoutePaths;
@@ -23,7 +21,6 @@ const RoutesPaths = () => {
       <Route path="/dashBook" exact component={Book} />
       <Route path={`${paths.editBook}:id`} component={EditBook} />
       <Route path={paths.createBook} component={AddBook} />
-      <Route path="/dashLanding" exact component={Landing} />
     </>
   );
 };

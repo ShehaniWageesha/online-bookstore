@@ -37,8 +37,8 @@ html {
 }
 
 body {
-  background-size: cover;
-  background-color: rgb(1, 177, 177);
+  background-color: darkcyan;
+  background-size: 90%;
 }
 
 input[type=text]:focus {

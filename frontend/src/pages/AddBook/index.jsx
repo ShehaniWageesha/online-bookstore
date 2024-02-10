@@ -48,16 +48,15 @@ function AddBook() {
 
   return (
     <div style={{ color: "white", marginLeft: "330px" }}>
-      <h2 style={{ fontFamily: "bolder", fontStyle: "italic" }}>Add Book</h2>
+      <h1 style={{ fontFamily: "bolder", fontStyle: "italic" }}>Add Book</h1>
       <br></br>
       <form
         noValidate
         onSubmit={(e) => onSubmitForm(e)}
         style={{ width: "30rem", fontWeight: "bolder" }}
       >
-      <br></br>
         <div className="form-group">
-          <label>Title :</label>
+          <label>Title</label>
           <input
             type="text"
             name="title"
@@ -69,7 +68,7 @@ function AddBook() {
           />
         </div>
         <div className="form-group">
-          <label>Author :</label>
+          <label>Author Name</label>
           <input
             type="text"
             name="author"
