@@ -7,6 +7,7 @@ function EditBook() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [book, setBook] = useState();
+  
   const token = localStorage.getItem("token");
 
   useEffect(() => {
@@ -53,6 +54,10 @@ function EditBook() {
       console.log(error);
     }
   };
+
+  if (!book) {
+    return <>Loading the data</>;
+  }
 
   return (
     <div style={{ color: "white", marginLeft: "330px" }}>
