@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #718abb;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -25,9 +25,43 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #d41a6b;
 }
 
+link{
+  color: #d41a6b;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  background-size: cover;
+  background-color: rgb(1, 177, 177);
+}
+
+input[type=text]:focus {
+  color: white;
+}
+
+input[type=text] {
+  color: darkgray;
+  font-weight: bold;
+}
+
+input[type=number]:focus {
+  color: white;
+}
+
+input[type=number] {
+  color: darkgray;
+  font-weight: bold;
+}
+
+td {
+  font-weight: bolder;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
