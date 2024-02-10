@@ -6,7 +6,7 @@ function Book() {
     <div className="DashMain">
       <br></br>
       <div>
-        <Link to="/createBook" className="nav-link">
+        <Link to="/addBook" className="nav-link">
           <h1 style={{ color: "white" }}>Add Book</h1>
         </Link>
       </div>

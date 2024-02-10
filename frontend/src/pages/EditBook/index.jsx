@@ -1,36 +1,33 @@
-/** @format */
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import "../../app/App";
 
 function EditBook() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [book, setBook] = useState();
+  const token = localStorage.getItem("token");
 
   useEffect(() => {
     const fetchData = async () => {
-      const tempBook = await getData(id);
-      setBook(tempBook);
-      console.log(JSON.stringify(tempBook));
+      try {
+        const res = await axios.get(`http://localhost:8000/api/book/${id}`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        setBook(res.data.book);
+      } catch (error) {
+        console.log(error);
+      }
     };
 
     fetchData();
-  }, []);
-
-  const getData = async (id) => {
-    try {
-      const finalURL = "http://localhost:8000/api/book/" + id;
-      const res = await axios.get(finalURL);
-      return res.data.data;
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  }, [id, token]);
 
   function handleChange(evt) {
-    const name = evt.target.name;
-    const value = evt.target.value;
+    const { name, value } = evt.target;
     setBook({
       ...book,
       [name]: value,
@@ -38,39 +35,34 @@ function EditBook() {
   }
 
   const onSubmitForm = async (e) => {
-    console.log(JSON.stringify(book));
+    e.preventDefault();
     try {
-      e.preventDefault();
-
-      const res = await axios({
-        method: "put",
-        baseURL: "http://localhost:8000",
-        url: "/api/book/update" + id,
-        data: book,
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-
-      console.log(res.data);
-      window.location.assign("http://localhost:3000/books");
+      await axios.put(
+        `http://localhost:8000/api/book/update/${id}`,
+        book,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      navigate("/dashBook");
       alert("Updated Successfully!");
     } catch (error) {
       console.log(error);
     }
   };
 
-  console.log(book);
-  if (!book) {
-    return <>Loading the data</>;
-  }
-
   return (
-    <div style={{ color: "white" }}>
-       <h2 style={{ fontFamily: "bolder", fontStyle: "italic" }}>Edit Book</h2>
-      <br></br>
-      <form noValidate onSubmit={(e) => onSubmitForm(e)} style={{ width: "30rem", fontWeight: "bolder" }}>
-        
+    <div style={{ color: "white", marginLeft: "330px" }}>
+      <h2 style={{ fontFamily: "bolder", fontStyle: "italic" }}>Edit Book</h2>
+      <br />
+      <form
+        noValidate
+        onSubmit={(e) => onSubmitForm(e)}
+        style={{ width: "30rem", fontWeight: "bolder" }}
+      >
         <div className="form-group">
           <label>Title</label>
           <input
@@ -144,14 +136,9 @@ function EditBook() {
           />
         </div>
         <div className="form-group">
-          <input
-            type="submit"
-            value="Update"
-            className="btn btn-dark"
-          />
+          <input type="submit" value="Update" className="btn btn-dark" />
         </div>
       </form>
-      
     </div>
   );
 }

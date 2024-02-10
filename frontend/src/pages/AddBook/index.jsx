@@ -1,4 +1,3 @@
-/** @format */
 import React, { useState } from "react";
 import axios from "axios";
 import "../../app/App";
@@ -26,6 +25,8 @@ function AddBook() {
     try {
       e.preventDefault();
 
+      const token = localStorage.getItem("token");
+
       const res = await axios({
         method: "post",
         baseURL: "http://localhost:8000",
@@ -33,19 +34,20 @@ function AddBook() {
         data: data,
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
         },
       });
 
       console.log(res.data);
       alert("Data Saved Successfully!");
-      window.location.assign("http://localhost:3000/books");
+      window.location.assign("http://localhost:3000/dashBook");
     } catch (error) {
       console.log(error);
     }
   };
 
   return (
-    <div style={{ color: "white" }}>
+    <div style={{ color: "white", marginLeft: "330px" }}>
       <h2 style={{ fontFamily: "bolder", fontStyle: "italic" }}>Add Book</h2>
       <br></br>
       <form

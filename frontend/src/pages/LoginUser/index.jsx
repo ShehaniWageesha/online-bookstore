@@ -1,9 +1,7 @@
-/** @format */
 import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import login from "./createuser.png";
-import "../../app/App";
 
 function LoginUser() {
   const [data, setData] = useState({
@@ -34,8 +32,8 @@ function LoginUser() {
         },
       });
 
-      console.log(res.data);
-      //alert("Data Saved Successfully!");
+      const token = res.data.token;
+      localStorage.setItem("token", token);
       window.location.assign("http://localhost:3000/dashBook");
     } catch (error) {
       console.log(error);
@@ -53,11 +51,11 @@ function LoginUser() {
           </center>
         </div>
         <br></br>
-        <h2 style={{ fontFamily: "bolder" }}>Login Below</h2>
+        <h2 style={{ fontFamily: "bolder" }}>Sign In Below</h2>
         <p style={{ fontFamily: "bolder" }}>
           Don't have an account?{" "}
           <Link to="/createUser" style={{ fontFamily: "bolder", color: "black" }}>
-            Register
+            Sign Up
           </Link>
         </p>
         <br></br>
@@ -78,6 +76,7 @@ function LoginUser() {
               style={{ background: "transparent" }}
             />
           </div>
+          <br></br>
           <div className="form-group">
             <label>Password</label>
             <input

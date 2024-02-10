@@ -1,4 +1,3 @@
-/** @format */
 import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -64,13 +63,13 @@ function CreateUser() {
             fontFamily: "bolder",
           }}
         >
-          Register Below
+          Sign Up Below
         </h2>
         
         <p style={{ fontFamily: "bolder" }}>
           Already have an account?{" "}
           <Link to="/login" style={{ fontFamily: "bolder", color: "black" }}>
-            Login
+            Sign In
           </Link>
         </p>
         <form
@@ -90,6 +89,7 @@ function CreateUser() {
               style={{ background: "transparent" }}
             />
           </div>
+          <br></br>
           <div className="form-group">
             <label>Email Address</label>
             <input
@@ -102,6 +102,7 @@ function CreateUser() {
               style={{ background: "transparent" }}
             />
           </div>
+          <br></br>
           <div className="form-group">
             <label>Password</label>
             <input
