@@ -2,7 +2,7 @@
 
 Clone the repository
 ```sh
-git https://github.com/ShehaniWageesha/online-bookstore.git
+git clone https://github.com/ShehaniWageesha/online-bookstore.git
 ```
 
 Run these commands for server side to start the server
