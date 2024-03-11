@@ -12,7 +12,7 @@ npm install
 ```
 
 ```sh
-node server.js
+node app.js
 ```
 
 Then run these commands for client side
